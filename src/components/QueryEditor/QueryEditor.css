@@ -1,0 +1,31 @@
+.query-editor {
+    width: 100%;
+  }
+  
+  .editor-loading {
+    height: 250px;
+    padding: 1rem;
+    background-color: #f5f5f5;
+  }
+  
+  .editor-loading-placeholder {
+    height: 100%;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 0.25rem;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  

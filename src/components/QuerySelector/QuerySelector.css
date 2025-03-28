@@ -1,0 +1,65 @@
+.query-selector {
+    position: relative;
+    width: 100%;
+  }
+  
+  .selector-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .selector-trigger:hover {
+    border-color: #999;
+  }
+  
+  .chevron-icon {
+    transition: transform 0.2s;
+  }
+  
+  .chevron-icon.open {
+    transform: rotate(180deg);
+  }
+  
+  .selector-dropdown {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: white;
+    z-index: 10;
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .selector-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+  
+  .selector-option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .selector-option.selected {
+    background-color: #f0f7ff;
+    color: #1a73e8;
+  }
+  
+  .check-icon {
+    color: #1a73e8;
+  }
+  
+  
