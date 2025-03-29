@@ -1,70 +1,180 @@
-# Getting Started with Create React App
+# Web-based SQL Query Interface
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployed Web App
+[Visit the Web App](https://sturdy-disco-seven.vercel.app/)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## About
+The project is a web-based SQL query interface designed to accept user-inputted SQL queries and display corresponding data tables. While the queries don't run against a real database, predefined query results are displayed for demonstration purposes. The app allows users to select queries from a dropdown menu, making it easy to explore multiple query outputs.
 
-### `npm start`
+### Features
+- Write and execute SQL queries with syntax highlighting.
+- Real-time query execution & view query results in a tabular format.
+- Access sample queries and data.
+- Real-time query statistics.
+- Search across data.
+- Track query execution history.
+- Export results in CSV or JSON format.
+- Virtualized rendering for large datasets.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Performance Optimizations
+- Virtualized table rendering for large datasets.
+- Efficient state management.
+- Optimized re-renders.
+- Lazy loading of components.
+- Debounced query execution.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology Stack
+- **React.js** - Modern UI library for building user interfaces.
+- **JavaScript** - Modern JavaScript features and syntax.
+- **CSS3** - Styling and responsive design.
 
-### `npm run build`
+### Additional Dependencies
+- **monaco-editor/react**
+  - Professional-grade code editor.
+  - SQL syntax highlighting.
+  - Customizable editor options.
+- **react-window**
+  - Efficient rendering of large lists and tables.
+  - Virtual scrolling for better performance.
+  - Memory optimization for large datasets.
+- **react-icons**
+  - Comprehensive icon library.
+  - Multiple icon sets (Font Awesome, Material Design, etc.).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Component Structure
+### QueryRunner
+- Main container component.
+- Manages application state.
+- Coordinates between components.
+- Handles query execution.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### QueryEditor
+- SQL editor component.
+- Monaco editor integration.
+- Syntax highlighting.
 
-### `npm run eject`
+### ResultsTable
+- Data display component.
+- Virtualized rendering.
+- Sorting and filtering.
+- Export functionality.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### QueryHistory
+- History tracking component.
+- Stores executed queries.
+- Allows query reuse.
+- Shows execution metrics.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Data Flow
+1. User writes/selects a query in **QueryEditor**.
+2. **QueryRunner** executes the query.
+3. Results are processed and stored.
+4. **ResultsTable** displays the data.
+5. **QueryHistory** is updated.
+6. User can export results or select from history.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Key Features in Depth
+1. **SQL Query Input Area**: A user-friendly code editor where users can type SQL queries.
+   - Utilizes the [Monaco Editor](https://microsoft.github.io/monaco-editor/) for syntax highlighting and better user experience.
+ 
+ <img width="1338" alt="Screenshot 2025-03-29 at 11 19 50 PM" src="https://github.com/user-attachments/assets/990025d6-11a6-47dd-b967-b203f9faf929" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  
+2. **Predefined Queries Dropdown**: Toggle between multiple predefined queries for convenience.
+   <img width="1348" alt="Screenshot 2025-03-29 at 11 21 59 PM" src="https://github.com/user-attachments/assets/c196e257-2146-4500-b78e-033b07c6ff57" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+3. **Data Display Table**: Mock results linked to the selected queries are displayed when you select a query and click the "Run Query" button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img width="1388" alt="Screenshot 2025-03-29 at 11 23 27 PM" src="https://github.com/user-attachments/assets/a5ea6c49-19b0-426b-9132-00c0cb8c7938" />
 
-### Analyzing the Bundle Size
+4. **Search Results**: Search across your results by typing what you need.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img width="1348" alt="Screenshot 2025-03-29 at 11 25 56 PM" src="https://github.com/user-attachments/assets/e973676d-c729-45be-8a63-382a39810dd1" />
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. **Render Large Data**: Render large data on the app without crashes.
+<img width="503" alt="Screenshot 2025-03-29 at 11 26 55 PM" src="https://github.com/user-attachments/assets/245df4b8-bb01-4f4b-b1a6-1daf275f6a18" />
 
-### Advanced Configuration
+<img width="1326" alt="Screenshot 2025-03-29 at 11 27 25 PM" src="https://github.com/user-attachments/assets/343a8c48-bb05-41d4-acaf-f4f5d357f7fa" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+6. **Query Statistics Data**: Displays execution time, rows returned, and columns returned.
 
-### `npm run build` fails to minify
+<img width="1317" alt="Screenshot 2025-03-29 at 11 27 55 PM" src="https://github.com/user-attachments/assets/6a958f56-a5d8-4751-8f8a-0a8fcdcef446" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+7. **Export Query Results**: Export query results as CSV or JSON if necessary.
+
+<img width="630" alt="Screenshot 2025-03-29 at 11 28 15 PM" src="https://github.com/user-attachments/assets/40015c7c-09f9-4322-aba8-68a3b5c72c37" />
+
+
+
+8. **Query History**: View the history of queries you ran on the editor along with the timestamp.
+
+<img width="390" alt="Screenshot 2025-03-29 at 11 28 35 PM" src="https://github.com/user-attachments/assets/70820bec-40a7-47af-aedf-025cd677a100" />
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd sql-query-runner
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm start
+```
+
+The application will be available at `http://localhost:3000`
+
+### Available Scripts
+
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── QueryRunner/     # Main container component
+│   ├── QueryEditor/     # SQL editor component
+│   ├── ResultsTable/    # Results display component
+│   └── QueryHistory/    # Query history component
+├── data/
+│   ├── sampleData.js    # Sample query results
+│   └── sampleQueries.js # Sample SQL queries
+├── App.js               # Root component
+└── index.js            # Application entry point
+```
