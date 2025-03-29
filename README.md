@@ -3,6 +3,9 @@
 ## Deployed Web App
 [Visit the Web App](https://sturdy-disco-seven.vercel.app/)
 
+## Documentation
+[Visit the Doc](https://docs.google.com/document/d/1JmOjV8zDpOos8ZaxJVs40O2IF38lj4_FHo0MkbaRTww/edit?usp=sharing)
+
 ---
 
 ## About
