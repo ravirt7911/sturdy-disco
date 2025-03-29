@@ -159,7 +159,7 @@ export default function QueryRunner() {
                 <ResultsTable data={showLargeData?largeData:results.data} isLoading={isLoading} rowCount={showLargeData?largeData.length:results.data.length} />
               )}
 
-              {activeTab === "stats" && (
+              {activeTab === "stats" && !showLargeData && (
                 <div className="stats-container">
                   <h3 className="stats-title">Query Statistics</h3>
                   <div className="stats-grid">
@@ -176,6 +176,11 @@ export default function QueryRunner() {
                       <p className="stat-value">{results.data.length > 0 ? Object.keys(results.data[0]).length : 0}</p>
                     </div>
                   </div>
+                </div>
+              )}
+              {activeTab === "stats" && showLargeData && (
+                <div className="stats-container">
+                  <p className="stats-warning">Statistics are not available for large data.</p>
                 </div>
               )}
             </div>
